@@ -1,4 +1,5 @@
 require 'logging'
+require 'fileutils'
 
 logger = Logging.logger.root
 color_scheme = Logging.color_scheme( 'bright',
@@ -16,6 +17,8 @@ layout = Logging.layouts.pattern(
   :pattern => "%d %-5l [%c]: %m\n",
   :color => color_scheme
 )
+
+FileUtils::mkdir_p 'logs/'
 
 if ENV['RACK_ENV'] == 'development'
   logger.level = :debug
