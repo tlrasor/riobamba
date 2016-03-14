@@ -1,5 +1,7 @@
 ## Riobamba README
 
+[![Build Status](https://travis-ci.org/tlrasor/riobamba.svg?branch=master)](https://travis-ci.org/tlrasor/riobamba)
+
 ### Introduction
 
 Riobamba is a simple (lol) URL shortening service written in Ruby with Sinatra
