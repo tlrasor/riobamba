@@ -1,29 +1,26 @@
 namespace :DB do
   require 'dm-migrations'
-  require './lib/models/model_bootstrapper'
 
   logger = Logging.logger[self]
 
-  if not ENV['RACK_ENV'] 
-    logger.info "NO RACK_ENV VARIABLE SET: ASSUMING :development!"
-    ENV['RACK_ENV'] = 'development' 
-  end
-
-  task :environment do
-    @modelbootstrapper = Riobamba::Models::ModelBootstrapper.new().configure()
+  task :db_environment => :environment do
+    if not ENV['RACK_ENV'] 
+      logger.warn "NO RACK_ENV VARIABLE SET: ASSUMING :development!"
+      ENV['RACK_ENV'] = 'development' 
+    end
   end
 
   desc "migrates the db"  
-  task :migrate => :environment do  
+  task :migrate => :db_environment do  
     @modelbootstrapper.configure().migrate
   end
 
   desc "upgrades the db"  
-  task :upgrade => :environment do  
+  task :upgrade => :db_environment do  
     @modelbootstrapper.upgrade
   end  
 
-  task :add_redirect=> :environment do
+  task :add_redirect=> :db_environment do
     @modelbootstrapper.bootstrap
     url = ENV['URL']
     if url.nil?

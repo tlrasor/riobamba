@@ -4,7 +4,7 @@ require 'json'
 
 module Riobamba
   module Tests
-    class RedirectsAdminController < TestFixture
+    class RedirectsAdminControllerTest < TestFixture
 
       def setup
         @log = Logging.logger[self]
@@ -23,6 +23,7 @@ module Riobamba
         post '/api/r', :body => data.to_json, 'Content-Type' => 'application/json'
         assert last_response.status == 201, "Status code was not 201"
       end
+
     end
   end
 end

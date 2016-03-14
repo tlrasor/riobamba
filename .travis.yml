@@ -1,0 +1,5 @@
+language: ruby
+
+env:
+  - "RACK_ENV=test"
+

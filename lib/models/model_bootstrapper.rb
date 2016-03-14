@@ -26,6 +26,7 @@ module Riobamba
           @log.info "Setting up in memory sqlite3 database"
           DataMapper::Logger.new(@log, :info)
           DataMapper.setup(:default,"sqlite3::memory:")
+          migrate
         end
         @configured = true
         self
