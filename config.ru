@@ -9,8 +9,6 @@ use Rack::Parser, :parsers => {
   'application/json' => proc {|data|  MultiJson.load(data, :symbolize_keys => true)}
 }
 run Rack::Cascade.new([
-  Riobamba::Controllers::IndexController,
   Riobamba::Controllers::RedirectsController,
-  Riobamba::Controllers::RedirectsApiController,
-  Riobamba::Controllers::AdminController 
+  Riobamba::Controllers::RedirectsApiController
 ])

@@ -1,22 +1,22 @@
 require 'sinatra/base'
-require_relative 'api_controller'
-require_relative '../helpers/code_helpers'
+require 'multi_json'
+
+require_relative 'base_controller'
+require_relative '../services/redirect_service'
 
 module Riobamba
-  module Controllers
-    class RedirectsController < ApiController
-
-      helpers Sinatra::Riobamba::CodeHelpers
+  module Controllers 
+    class RedirectsController < BaseController
 
       get '/r/:code' do |code|
         begin
           @log.debug { params.inspect }
-          id = toId(code)
-          r = Models::Redirect.first(:id => id)
+          r = Services::RedirectService.getByCode(code)
           if r.nil?
             not_found
           end
-          redirect to(r.url)
+          r.update(:uses => r.uses+1)
+          erb :redirect
         rescue
           halt 500
         end

@@ -1,12 +1,10 @@
 require 'sinatra/base'
-require_relative 'api_controller'
-require_relative '../helpers/code_helpers'
+require_relative 'base_controller'
 
 module Riobamba
   module Controllers
-    class RedirectsApiController < ApiController
+    class RedirectsApiController < BaseController
 
-      helpers Sinatra::Riobamba::CodeHelpers
 
       get '/api/r' do
         begin

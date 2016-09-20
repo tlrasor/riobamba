@@ -1,16 +1,15 @@
 require 'dotenv/tasks'
-require_relative './bin/app_logging'
-require_relative './lib/models/model_bootstrapper'
+require_relative './config/logging'
 
-logger = Logging.logger.root
+logger = Logging.logger['Rake']
 
 task :environment => [:dotenv] do
-  @modelbootstrapper = Riobamba::Models::ModelBootstrapper.new().configure()
+  logger.debug "#{ENV}"
 end
 
 rake_files = FileList['rake/*.rake']
 if ENV["DEBUG"]
-  logging.info "Using rake files: #{rake_files}"
+  logger.info "Using rake files: #{rake_files}"
 end
 rake_files.each { |r| load r }
 

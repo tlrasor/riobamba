@@ -1,13 +1,13 @@
 {
   "name": "riobamba",
   "authors": [
-    "Travis Rasor <travis.rasor@argodata.com>"
+    "Travis Rasor <tlrasor@gmail.com>"
   ],
   "description": "",
   "main": "",
   "moduleType": [],
-  "license": "MIT",
-  "homepage": "",
+  "license": "Beerware",
+  "homepage": "https://github.com/tlrasor/riobamba",
   "private": true,
   "ignore": [
     "**/.*",

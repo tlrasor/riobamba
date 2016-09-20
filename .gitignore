@@ -1,8 +1,8 @@
 
 # app
-/logs/
-/db/
-/lib/public/vendor/
+/logs/*.log
+/db/*.db
+/public/vendor/
 
 ### Ruby ###
 *.gem

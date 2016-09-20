@@ -50,8 +50,8 @@ module Sinatra
      
       def path_to_css(sheet)
         case sheet
-          when :normalize then "/vendor/normalize.css/normalize.css"
-          when :milligram then '/vendor/milligram/dist/milligram.min.css'
+          when :normalize then "vendor/normalize.css/normalize.css"
+          when :milligram then 'vendor/milligram/dist/milligram.min.css'
           when :milligram_font then 'https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic'
           when :picnic then 'vendor/picnic/picnic.min.css'
           when :font_awesome then 'vendor/components-font-awesome/css/font-awesome.min.css'
