@@ -1,21 +1,78 @@
 
-<nav class="demo">
+<nav class="demo imponent">
   <a href="#" class="brand">
-    <img class="logo" src="/public/images/riobamba.png" />
+    <img class="logo" src="/images/condor_rough.png" />
     <span>Riobamba</span>
   </a>
 
   <!-- responsive-->
   <input id="bmenub" type="checkbox" class="show">
-  <label for="bmenub" class="burger pseudo button">menu</label>
+  <label for="bmenub" class="burger pseudo button">≡</label>
 
   <div class="menu">
-    <a href="#" class="button warning">Report Broken Link</a>
-    <a href="#" class="button">Admin</a>
+    <a href="#" class="pseudo button">Report Broken Link</a>
+    <a href="#" class="pseudo button">Admin</a>
   </div>
 </nav>
-<div>
-  <header class="card">
-    <h1>Welcome to Riobamba</h1>
-  </header>
-</div>
+
+<main id="home">
+  <section id="heading" class="flex five center">
+    <article class="full four-fifth-1000">
+        <div class="card heading">
+            <!-- <img src="/images/el_chimborazo.jpg"> -->
+          <h1>Riobamba</h1>
+          <footer class="header-shadow">
+            <h2>The Social Link Sharing Service</h2>
+          </footer>
+        </div>
+    </article>
+  </section>
+  <section id="top-links" class="flex five center">
+    <article class="full four-fifth-1000">
+      <div class="card">
+        <header>
+          <h3> Most Recent Links </h3>
+        </header>
+        <div>
+          <table class="top-links">
+            <tr>
+              <th>Link</th>
+              <th>Created</th>
+              <th>Clicks</th>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">http://example.com</a>
+              </td>
+              <td>9/22/2016 : 11:27am</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">http://example.com/blog</a>
+              </td>
+              <td>9/22/2016 : 11:28am</td>
+              <td>12</td>
+            </tr>
+          </table> 
+        </div>
+        <footer class="header-shadow">
+          <p>Yeah we got all sorts of example text bruh</p>
+        </footer>
+      </div>
+    </article>
+  </section>
+  <section id="add-links" class="flex five center">
+    <article class="full four-fifth-1000">
+      <div class="card">
+        <header>
+          <h3> Add new link </h3>
+        </header>
+        <form id="add-link-form">
+          <input id="add-link-input" class="stack" type="url" placeholder="http://example.com">
+          <input id="add-link-btn" class="stack button" type="submit" placeholder="Submit">
+        </form>
+      </div>
+    </article>
+  </section>
+</main>

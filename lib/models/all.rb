@@ -1,1 +1,1 @@
-require_relative './redirect'
+require 'models/redirect'

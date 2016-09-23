@@ -1,33 +1,44 @@
 require 'sinatra/base'
 require 'tilt/erb'
 require 'logging'
-require_relative '../helpers/template_helpers'
+require 'path_builder'
+require "sinatra/reloader"
+
+require 'helpers/template_helpers'
 
 module Riobamba
   module Controllers
     class BaseController < Sinatra::Base
+
+      def self.public_path
+        path = ENV['PUBLIC_FOLDER'] 
+        path ||= LoadPath::PathBuilder.new(File.dirname(__FILE__)).parent_directory('lib').sibling_directory('public').to_s
+        return path
+      end
+
+      def self.view_path
+        path = ENV['VIEW_FOLDER'] 
+        path ||= LoadPath::PathBuilder.new(File.dirname(__FILE__)).sibling_directory('views').to_s
+        return path
+      end
+
       configure do
         set :app_file, __FILE__
         set :root, File.dirname(__FILE__)
-        set :public_folder, Proc.new {  
-          ENV['PUBLIC_FOLDER'] || File.expand_path("../public", root)
-        }
-        set :views, Proc.new {  
-          ENV['VIEWS'] || File.expand_path("../views", root)
-        }
-        set :bind, lambda { ENV['BIND_ADDRESS'] || '0.0.0.0' }
-        set :port, lambda { ENV['PORT'] || '8080'}  
-
+        set :public_folder, Proc.new { public_path }
+        set :views, Proc.new { view_path }
+        
         disable :method_override
         enable :sessions
 
-        helpers Sinatra::Riobamba::TemplateHelpers
+        helpers TemplateHelpers
         
       end
 
       configure :development do 
         enable :show_exceptions
         enable :dump_errors
+        register Sinatra::Reloader
       end
 
       configure :production do

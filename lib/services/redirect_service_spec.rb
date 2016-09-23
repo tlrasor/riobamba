@@ -1,8 +1,6 @@
-require_relative '../helpers/spec_helper'
-
-require_relative "../../lib/services/redirect_service"
-require_relative "../../lib/services/code_service"
-
+require 'helpers/spec_helper'
+require "services/code_service"
+require "services/redirect_service"
 
 module Riobamba
   module Services

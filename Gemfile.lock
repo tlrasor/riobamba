@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/nayyara-samuel/load-path.git
+  revision: 505ee1fdabf71ef6fc91eb1706a9726cf543e3bc
+  specs:
+    load_path (0.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -8,9 +14,12 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    ansi (1.5.0)
+    backports (3.6.8)
     bcrypt (3.1.10)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
+    builder (3.2.2)
     daemons (1.2.3)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
@@ -71,6 +80,11 @@ GEM
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
     minitest (5.8.4)
+    minitest-reporters (1.1.11)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.11.2)
     oj (2.14.6)
     rack (1.6.4)
@@ -82,9 +96,17 @@ GEM
       rack (>= 1.0)
     radix (2.2.1)
     rake (10.5.0)
+    ruby-progressbar (1.8.1)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    sinatra-contrib (1.4.7)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
     stringex (1.5.1)
     thin (1.6.4)
@@ -105,8 +127,10 @@ DEPENDENCIES
   data_mapper (= 1.2.0)
   dm-sqlite-adapter (= 1.2.0)
   dotenv (= 2.1.0)
+  load_path!
   logging (= 2.0.0)
   minitest (= 5.8.4)
+  minitest-reporters
   multi_json (= 1.11.2)
   oj (= 2.14.6)
   rack (= 1.6.4)
@@ -114,8 +138,9 @@ DEPENDENCIES
   rack-test (= 0.6.3)
   radix (= 2.2.1)
   rake (= 10.5.0)
-  sinatra (= 1.4.7)
+  sinatra
+  sinatra-contrib
   thin (= 1.6.4)
 
 BUNDLED WITH
-   1.11.2
+   1.13.1

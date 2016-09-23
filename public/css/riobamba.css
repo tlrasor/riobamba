@@ -1,0 +1,39 @@
+.heading {
+  text-align: center;
+  background-image: url('../images/el_chimborazo.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.header-shadow {
+  text-align: center;
+}
+
+.links-head {
+  background-image: url('../images/condor_rough.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+nav.loading {
+  transition: all 0s;
+}
+
+body {
+  padding-top: 65px;
+  background-color: 0;
+}
+
+main {
+  display: block;
+  color: #333;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 10px;
+  z-index: 5;
+}
+
+table.top-links {
+  width:100%;
+}

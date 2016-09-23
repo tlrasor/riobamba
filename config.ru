@@ -1,14 +1,23 @@
+if ENV['RACK_ENV'] != 'production'
+  require 'dotenv'
+  Dotenv.load
+end
+
 require 'rack'
 require 'rack/parser'
 require 'multi_json'
 
-require './bin/app'
+require './config/environment'
 
 use Rack::Deflater
 use Rack::Parser, :parsers => { 
   'application/json' => proc {|data|  MultiJson.load(data, :symbolize_keys => true)}
 }
-run Rack::Cascade.new([
-  Riobamba::Controllers::RedirectsController,
-  Riobamba::Controllers::RedirectsApiController
-])
+
+map '/api' do
+  run Riobamba::Controllers::RedirectsApiController.new
+end
+
+map '/' do
+  run Riobamba::Controllers::RedirectsController.new
+end

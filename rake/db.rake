@@ -1,5 +1,5 @@
 require 'dm-migrations'
-require_relative '../config/db'
+require './config/db'
 
 namespace :DB do
 

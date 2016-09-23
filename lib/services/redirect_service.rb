@@ -1,5 +1,5 @@
-require_relative 'code_service'
-require_relative '../models/redirect'
+require 'services/code_service'
+require 'models/redirect'
 
 module Riobamba
   module Services
