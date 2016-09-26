@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
+ruby "2.3.1"
+
+gem 'sinatra', '1.4.7'
 gem 'data_mapper', '1.2.0'
 gem 'dm-sqlite-adapter', '1.2.0'
 gem 'activesupport', '4.2.5.2'
@@ -11,7 +13,7 @@ gem 'oj', '2.14.6'
 gem 'logging', '2.0.0'
 gem 'radix', '2.2.1'
 gem 'load_path', :git => 'https://github.com/nayyara-samuel/load-path.git'
-gem 'sinatra-contrib'
+gem 'sinatra-contrib', '1.4.7'
 
 group :development, :test do
   gem 'dotenv', '2.1.0'
@@ -21,6 +23,6 @@ end
 
 group :test do
   gem 'minitest', '5.8.4'
-  gem 'minitest-reporters'
+  gem 'minitest-reporters', '1.1.11'
   gem 'rack-test', '0.6.3'
 end

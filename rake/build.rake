@@ -9,8 +9,8 @@ namespace :Build do
   task :install_bower_deps do
     sh "bower prune"
     sh "bower install"
-    sh "rm -rf lib/public/vendor"
-    sh "mkdir -p lib/public/vendor"
-    sh "cp -r bower_components/* lib/public/vendor"
+    sh "rm -rf public/vendor"
+    sh "mkdir -p public/vendor"
+    sh "cp -r bower_components/* public/vendor"
   end
 end

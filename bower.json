@@ -18,8 +18,6 @@
   ],
   "dependencies": {
     "jquery": "^2.2.1",
-    "picnic": "^5.1.4",
-    "components-font-awesome": "^4.5.0",
-    "milligram": "^1.1.0"
+    "picnic": "^5.1.4"
   }
 }
